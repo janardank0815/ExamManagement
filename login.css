@@ -1,0 +1,189 @@
+/* #main
+{
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    transform-origin: 10px;
+    color: rgb(115, 0, 103);
+    padding: 10px;
+    
+} */
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Times New Roman', Times, serif ;
+}
+body
+{ 
+   
+    align-items: center;
+    min-height: vh;
+    display: flex;
+    justify-content: center;
+    background : url('saibg.png')  no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.wrapper
+{
+    margin-top: 7.5%;
+    width: 420px;
+    background-color: rgb(61, 6, 91);
+    border: 2px solid rgba(255,255, 255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(255,255, 255,.2);
+    color:white;
+    border-radius: 10px;
+    padding: 30px 40px;
+   
+}
+.wrapper h1
+{
+  font-size: 40px;
+  text-align: center;
+}
+.wrapper .input-box
+{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    display: flex;
+    margin: 30px 0 ;
+}
+.input-box input
+{
+    width: 100%;
+    height: 75%;
+    background: transparent;
+    border:none;
+    outline: none;
+    border: 2px solid rgb(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: aquamarine;
+    padding: 20px 45px 20px 20px;
+}
+ .input-box img
+{
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  transform: translateY(-50%);
+  width: 20px;
+} */
+.input-box input::placeholder
+{
+    color: aliceblue;
+    text-align: left;
+}
+.input-box i
+{
+   position: absolute;
+   right: 20px;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+}
+.wrapper .rememder
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0px 15px;
+
+}
+
+.rememder label input
+{
+    accent-color: white;
+    margin-right: 15px;
+}
+.rememder a
+{
+   text-decoration: none;
+   color: rgb(52, 52, 168);
+}
+.rememder a:hover
+{
+    text-decoration: underline;
+}
+.wrapper .rememder a
+{
+    margin-right: 10px;
+}
+#ch1
+{
+    margin-left: 5px;
+}
+
+.wrapper .btn1
+{
+    width: 100%;
+    height: 50px;
+    background-color: aliceblue;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgb(0,0,0,.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    font-weight: 600;
+}
+.wrapper .register
+{
+    text-align: center;
+    font-size: 14.5;
+    margin: 20px 0 15px;
+
+}
+.register a
+{
+    text-decoration: none;
+    color: rgb(52,52,168);
+}
+.register p 
+{
+    
+    color: azure;
+    font-weight: lighter;
+}
+.register p a:hover
+{
+    text-decoration: underline;
+}
+
+
+#student,
+#teacher {
+    margin-bottom: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(52,52,168);
+    margin-left: 20px;
+}
+
+#student:hover,
+#teacher:hover {
+    text-decoration: underline;
+
+}
+.toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}

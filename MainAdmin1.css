@@ -1,0 +1,53 @@
+*
+{
+    background-color: pink;
+}
+header
+{
+    border: 2px solid rgb(176, 15, 42);
+    border-radius: 20px;
+    background-color: blueviolet;
+    height: 80px;
+    text-align: center;
+    padding-top: 10px;
+
+}
+h1{
+    background-color: blueviolet;
+}
+#Logout
+{   
+    position:fixed;
+    right:40px;
+    top:30px;
+    font-size: 10px;
+    border: 1px solid rgb(176, 15, 42);
+    border-radius: 20px;
+    background: transparent;
+    padding: 10px;
+}
+.container
+{
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: repeat(3,3fr);
+    grid-gap: 1px;
+    text-align: center;
+}
+.container img
+{
+    width: 250px;
+    height: 250px;
+    border-radius: 30px;
+}
+.container a
+{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+a:hover
+{
+    color: rgb(104, 30, 153);
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registeration.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="signup-box">
+        <h1>Sign Up</h1>
+        <h4>It's Free And Takes A few Minutes</h4>
+        <form action="reg.php" method="post">
+            <label>First Name</label>
+            <input type="text" name="first" id="frt1" placeholder="Enter First Name">
+            <label>Last Name</label>
+            <input type="text" name="last" id="lst1" placeholder="Enter Last Name">
+            <label>Seat No</label>
+            <input type="number" name="seatno1" id="seat1" placeholder="Enter your seatNo">
+            <label>Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter Valid Email">
+            <label>Password</label>
+            <input type="password" name="pass" id="pass1" placeholder="Create Password"><br>
+            <div class="radio">
+                <div class="radio-container">
+                    <label for="student">Student</label>
+                    <input type="radio" id="student" name="role" value="student">
+                </div>
+                <div class="radio-container">
+                    <label for="teacher">Teacher</label>
+                    <input type="radio" id="teacher" name="role" value="teacher">
+                </div>
+              </div>
+            <button>Sign Up</button>
+            <p class="para1">Already Have An account,  <a href="Login.html">Login</a></p>
+         
+        </form>
+
+    </div>
+
+</body>
+</html>

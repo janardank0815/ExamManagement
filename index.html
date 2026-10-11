@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="login.css" hreflang="index.php">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+ </head>
+ <script>
+
+  // let eyeicon = document.getElementById("eyeicon");
+  // let password = document.getElementById("password");
+  // eyeicon.dblonclick = function()
+  // {
+  //   if(password.type == "password")
+  //   {
+  //     password.type = "text";
+  //     eyeicon.scr = "eye-open.png";
+  //   }
+  //   else
+  //   {
+  //    password.type = "password";
+  //     eyeicon.scr = "eye-close.png";
+  //   }
+  // }
+
+  function setcookie()
+  {
+    var user = document.getElementById("user1").value;
+    var pass = document.getElementById("pass1").value;
+    
+    document.cookie = "myusername="+user+"; path=http://localhost/EXAM MANAGEMENT/";
+    document.cookie = "mypass="+pass+"; path=http://localhost/EXAM MANAGEMENT/";
+  }
+  function getcookiedata()
+  {
+    console.log(document.cookie);
+    var u = getcookie("myusername");
+    var p = getcookie("mypass");
+     document.getElementById("user1").value = u;
+     document.getElementById("pass1").value = p;
+  }
+  function getcookie(cname)
+  {
+    var name = cname+"=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for(var i=0; i<ca.length; i++)
+    {
+      var c = ca[i];
+      while(c.charAt(0)==' ')
+      {
+        c= c.substring(1);
+      }
+      if(c.indexOf(name)==0)
+      {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
+ </script>
+ <body onload="getcookiedata()">
+
+    <div class="wrapper">
+      <form action="login.php" method="post">
+      <h1>Login</h1>
+      <div class="input-box"> 
+        <input type="number" placeholder="Enter Your Seat Number" name="seat" id="user1" required>
+        <i class='bx bxs-user-circle'></i><br>
+      </div>
+      <div class="input-box">
+      <input type="password" placeholder="Enter Password" name="pass" id="pass1" required>
+        <img src="eye-close.png" name="eyeicon"></img>
+      </div>
+      <div class="rememder">
+        <label><input type="checkbox" id="ch1" onclick="setcookie()" >Remainder Me</label>
+        <a href="forget.html">Forget Password</a>
+      </div>
+      <div class="radio-container">
+        <label for="student">Student</label>
+        <input type="radio" id="student" name="role" value="student">
+        <label for="teacher">Teacher</label>
+        <input type="radio" id="teacher" name="role" value="teacher">
+    </div>
+      <button type="submit" class="btn1">Login</button>
+
+      <div class="register">
+        <p>Don't Have An Account, 
+          <a href="registration.html">Register</a>
+        </p>
+      </div>
+      <div id="toast" class="toast"></div>
+
+        
+      </form>
+    </div>
+
+
+ </body>
+ </html>

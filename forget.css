@@ -1,0 +1,148 @@
+body
+{ 
+   
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background : url(icreclg.jpg)no-repeat;
+   
+    background-size: cover;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+    font-family: 'Times New Roman', Times, serif ;
+  }
+  .wrapper
+{
+    margin-top: 7.5%;
+    width: 420px;
+    background-color: rgb(61, 6, 91);
+    border: 2px solid rgba(255,255, 255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(255,255, 255,.2);
+    color:white;
+    border-radius: 10px;
+    padding: 50px 50px;
+   
+}
+.wrapper h1
+{
+  font-size: 40px;
+  text-align: center;
+}
+.wrapper h4
+{
+    font-size: 20px;
+    text-align: start;
+    margin-top: 7.5%;
+}
+form
+{
+    margin: 18px;
+}
+.wrapper .input-box input
+{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+.wrapper button
+{
+    width: 60px;
+    height: 30px;
+    margin-bottom: 5%;
+    background-color: skyblue;
+    align-items: center;
+    border-radius: 3%;
+
+}
+.login a
+{
+    text-decoration: none;
+    color: hotpink;
+
+}
+.login a:hover
+{
+   text-decoration: underline;
+}
+body
+{ 
+   
+    align-items: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background : url(icreclg.jpg)no-repeat;
+   
+    background-size: cover;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+    font-family: 'Times New Roman', Times, serif ;
+  }
+  .wrapper
+{
+    margin-top: 7.5%;
+    width: 420px;
+    background-color: rgb(61, 6, 91);
+    border: 2px solid rgba(255,255, 255,.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(255,255, 255,.2);
+    color:white;
+    border-radius: 10px;
+    padding: 50px 50px;
+   
+}
+.wrapper h1
+{
+  font-size: 40px;
+  text-align: center;
+}
+.wrapper h4
+{
+    font-size: 20px;
+    text-align: start;
+    margin-top: 7.5%;
+}
+form
+{
+    margin: 18px;
+}
+.wrapper .input-box input
+{
+    width: 100%;
+    height: 100%;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+.wrapper button
+{
+    width: 60px;
+    height: 30px;
+    margin-bottom: 5%;
+    background-color: skyblue;
+    align-items: center;
+    border-radius: 3%;
+
+}
+.login a
+{
+    text-decoration: none;
+    color: hotpink;
+
+}
+.login a:hover
+{
+   text-decoration: underline;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Attendance</title>
+<link rel="stylesheet" href="teacherrattendance.css">
+</head>
+<body>
+
+<h2>Student Attendance</h2>
+
+<div class="attendanceForm">
+    <b><label for="studentName">Student Name:</label></b>
+    <input type="text" placeholder="Enter Student Name" id="studentName" required><br><br>
+   <b> <label for="rollNo">Roll No:</label></b>
+    <input type="number" placeholder="Enter RollNo Name" id="rollNo" required><br><br>
+    <button type="button" onclick="markAttendance()">Present</button>
+</div>
+
+
+
+<br>
+
+<table id="attendanceTable">
+    <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Student Name</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+
+    function markAttendance() {
+        const studentName = document.getElementById('studentName').value;
+        const rollNo = document.getElementById('rollNo').value;
+        const date = new Date().toLocaleDateString();
+        const time = new Date().toLocaleTimeString();
+
+        const attendanceData = {
+            rollNo,
+            studentName,
+            date,
+            time
+        };
+
+        let attendanceList = JSON.parse(localStorage.getItem('attendance')) || [];
+        attendanceList.unshift(attendanceData); 
+        localStorage.setItem('attendance', JSON.stringify(attendanceList));
+
+        
+        const currentTime = new Date().getTime();
+        const oneHourAgo = currentTime - (60 * 60 * 1000);
+        attendanceList = attendanceList.filter(entry => {
+            const entryTime = new Date(entry.date + ' ' + entry.time).getTime();
+            return entryTime > oneHourAgo;
+        });
+
+        localStorage.setItem('attendance', JSON.stringify(attendanceList));
+
+        
+        const expirationTime = new Date();
+        expirationTime.setTime(currentTime + (60 * 60 * 1000));
+        document.cookie = `attendanceData=${JSON.stringify(attendanceList)}; expires=${expirationTime.toUTCString()}`;
+
+        updateAttendanceTable();
+        
+        document.getElementById('studentName').value = '';
+        document.getElementById('rollNo').value = '';
+    }
+
+    function updateAttendanceTable() {
+        let attendanceList;
+
+        const cookieData = document.cookie.split('; ').find(row => row.startsWith('attendanceData='));
+        if (cookieData) {
+            attendanceList = JSON.parse(decodeURIComponent(cookieData.split('=')[1]));
+        } else {
+            attendanceList = [];
+        }
+
+        const tbody = document.querySelector('#attendanceTable tbody');
+        tbody.innerHTML = '';
+
+        attendanceList.forEach(entry => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${entry.rollNo}</td>
+                <td>${entry.studentName}</td>
+                <td>${entry.date}</td>
+                <td>${entry.time}</td>
+            `;
+            tbody.appendChild(row);
+        });
+    }
+
+    window.onload = updateAttendanceTable;
+</script>
+
+</body>
+</html>

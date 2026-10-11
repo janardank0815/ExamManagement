@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="forget.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Forget Password</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Forget Password</h1>
+        <form action="send_otp.php" method="post" id="frm1">
+            <div class="input-box">
+                <h4>Email:</h4><br>
+                <input type="email" id="txt1" name="email" placeholder="Enter Valid Email" required>
+                <span id="email-error" class="error"></span>
+            </div>
+            <button type="button" onclick="generateAndSendOTP()">Send OTP</button>
+            <div class="input-box">
+                <h4>OTP:</h4><br>
+                <input type="text" id="otp" name="otp" placeholder="Enter OTP" required>
+                <span id="otp-error" class="error"></span>
+            </div>
+            <button type="button" onclick="validateForm()">Submit</button>
+            <div class="login">
+                <p>Back to, <a href="Login.html">login</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    
+        function generateAndSendOTP() {
+            var email = document.getElementById("txt1").value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var emailError = document.getElementById("email-error");
+
+            if (!emailRegex.test(email)) {
+                emailError.textContent = "Invalid email address";
+                return;
+            }
+
+
+            var otp = Math.floor(100000 + Math.random() * 900000);
+
+            
+            document.getElementById("otp").value = otp;
+        }
+
+
+        function validateForm() {
+            var otp = document.getElementById("otp").value;
+            var otpError = document.getElementById("otp-error");
+
+            if (otp.length !== 6 || isNaN(otp)) {
+                otpError.textContent = "OTP must be a 6-digit number";
+                return;
+            }
+
+        
+            window.location.href = "password_reset.html";
+        }
+    </script>
+</body>
+</html>

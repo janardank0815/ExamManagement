@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Form</title>
+    <style>
+        body {
+            font-family:sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('c:\\Users\\ADMIN\\Downloads\\pc.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .container {
+            
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: hsla(322, 93%, 50%, 0.94); /* Add some transparency */
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(38, 2, 2, 0.1);
+        }
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-group button {
+            background-color: #007bff;
+            color: hsl(161, 94%, 50%);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #0056b3;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Supervisor Form</h2>
+        <form action="super.php" method="post">
+            <div class="form-group">
+                <label for="supervisor_name">Supervisor Name:</label>
+                <input type="text" name="supervisor_name" id="supervisor_name" placeholder="Enter Supervisor Name" required>
+            </div>
+            <div class="form-group">
+                <label for="supervisor_id">Supervisor ID:</label>
+                <input type="text" name="supervisor_id" id="supervisor_id" placeholder="Enter Supervisor ID" required>
+            </div>
+            <div class="form-group">
+                <label for="block_no">Block Number:</label>
+                <input type="text" name="block_no" id="block_no" placeholder="Enter Block Number" required>
+            </div>
+            <div class="form-group">
+                <label for="student_count">Student Count:</label>
+                <input type="number" name="student_count" id="student_count" placeholder="Enter Student Count" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

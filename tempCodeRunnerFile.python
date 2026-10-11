@@ -1,0 +1,29 @@
+class Account:
+    def __init__(self, principal, rate, time):
+        self.principal = principal
+        self.rate = rate
+        self.time = time
+
+    def compound_interest(self):
+        return self.principal * (1 + self.rate/100)**self.time
+
+class CompoundInterestCalculator(Account):
+    def __init__(self, principal, rate, time):
+        super().__init__(principal, rate, time)
+
+    def calculate(self):
+        return self.compound_interest()
+
+def main():
+    print("Welcome to Compound Interest Calculator!")
+    principal = float(input("Enter the principal amount: "))
+    rate = float(input("Enter the annual interest rate (%): "))
+    time = int(input("Enter the time period (in years): "))
+    
+    calculator = CompoundInterestCalculator(principal, rate, time)
+    result = calculator.calculate()
+    
+    print(f"\nThe compound interest after {time} years is: ${result:.2f}")
+
+if __name__ == "__main__":
+    main()
